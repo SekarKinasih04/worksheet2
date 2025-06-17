@@ -1,15 +1,18 @@
 body {
-  background: #f0f4f8;
-  font-family: "Segoe UI", sans-serif;
   margin: 0;
   padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f0f8ff;
+  overflow: hidden;
 }
 
 .container {
+  position: relative;
+  z-index: 2;
   max-width: 600px;
   margin: 100px auto;
   padding: 40px;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -21,4 +24,36 @@ h1 {
 
 p {
   color: #666;
+}
+
+/* Animasi bebek */
+.duck-container {
+  position: fixed;
+  top: 50%;
+  left: -150px;
+  z-index: 1;
+  animation: moveDuck 10s linear infinite;
+}
+
+.duck {
+  width: 100px;
+  opacity: 0.8;
+}
+
+@keyframes moveDuck {
+  0% {
+    left: -150px;
+    transform: rotateY(0deg);
+  }
+  50% {
+    left: 100%;
+    transform: rotateY(0deg);
+  }
+  51% {
+    transform: rotateY(180deg); /* balik arah */
+  }
+  100% {
+    left: -150px;
+    transform: rotateY(180deg);
+  }
 }
